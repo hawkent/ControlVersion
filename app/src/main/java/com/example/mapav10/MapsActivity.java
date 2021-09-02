@@ -7,6 +7,7 @@ import android.Manifest;
 import android.app.Fragment;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -84,18 +85,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
-    try {
-        CargarRestaurantes();
-    } catch (IOException e) {
+        try {
+            CargarRestaurantes();
+        } catch (IOException e) {
 
-        e.printStackTrace();
+            e.printStackTrace();
+        }
+
     }
 
-}
+
+
 
 private void CargarRestaurantes() throws IOException {
 
