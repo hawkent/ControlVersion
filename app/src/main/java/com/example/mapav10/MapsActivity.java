@@ -91,6 +91,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     try {
         CargarRestaurantes();
     } catch (IOException e) {
+
         e.printStackTrace();
     }
 
