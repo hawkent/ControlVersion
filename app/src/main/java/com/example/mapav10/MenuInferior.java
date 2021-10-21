@@ -93,11 +93,15 @@ public class MenuInferior extends BottomSheetDialogFragment{
         webBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://google.es");
+               /* Uri uri = Uri.parse(url);
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                intent.setData(Uri.parse(url));
+                intent.setData(uri);
+                startActivity(intent);*/
+                Intent intent = new Intent(v.getContext(), Url.class);
+                intent.putExtra("url",url);
                 startActivity(intent);
+
             }
         });
 
